@@ -1,0 +1,297 @@
+.home-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  transform: scale(1);
+  transition: transform 0.5s ease;
+  background: linear-gradient(135deg, #151717, #151719);
+  background-size: 200% 200%;
+  animation: floating 6s ease-in-out infinite, gradientAnimation 10s ease infinite;
+  padding-top: 100px; 
+}
+
+.heading {
+  z-index: 1;
+  width: 100%; 
+  text-align: center;
+}
+
+.heading h1 {
+  font-size: 3.3rem;
+  color: rgb(202, 52, 53);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+  margin-bottom: 20px;
+  margin-top: 0px; 
+}
+.heading p {
+  font-size: 1.5rem;
+  color: #9ca9b3;
+  margin: 10px 0 0 0; 
+  line-height: 1.5; 
+  text-align: center;
+  width: 90%; 
+  max-width: 600px;
+  margin: 10px auto; 
+}
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #fff; }
+}
+
+.home-container:hover {
+  transform: scale(1.1);
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animated-line {
+  width: 80%; 
+  height: 2px; 
+  margin: 40px auto; 
+  background: linear-gradient(90deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 1) 50%, rgba(255, 0, 0, 0) 100%);
+  background-size: 200% 100%;
+  animation: slide 2s ease-in-out infinite;
+}
+
+@keyframes slide {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+.subheading{
+  width: 100%; 
+  text-align: center;
+}
+.subheading h2{
+  font-size: 2rem;
+  color:rgb(248, 233, 233);
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  margin-bottom: 20px;
+  margin-top: 0px; 
+}
+.subheading p{
+  font-size: 1.2rem;
+  color: #9ca9b3;
+  margin: 10px 0 0 0; 
+  line-height: 1.5; 
+  text-align: center;
+  width:200%; 
+  max-width: 700px;
+  margin: 10px auto; 
+}
+@media (min-width: 768px) {
+  .subheading h2 {
+    font-size: 2.5rem; 
+  }
+  .subheading p {
+    font-size: 1.2rem; 
+    width: 90%;
+  }
+}
+@media (max-width: 480px) {
+  .subheading h2 {
+    font-size: 1.5rem; 
+  }
+  .subheading p {
+    font-size: 1rem;
+    width: 100%;
+    max-width: none; 
+    padding: 0 10px; 
+  }
+}
+.card {
+  overflow: visible;
+  width: 300px;
+  height: 350px;
+  margin: 20px;
+  perspective: 1000px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 15px 3px #000000ee;
+  border-radius: 10px;
+
+}
+
+.front, .back {
+  background-color: #151515;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.back {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.back::before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  width: 200px; 
+  height: 200%; 
+  animation: rotation_481 5000ms infinite linear;
+}
+
+.back-content {
+  width: 95%;
+  height: 95%;
+  background-color: #151515;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-content h2 {
+  color: #ff9966; /* Example color, adjust as needed */
+}
+
+.back-content strong {
+  color: white; /* Assuming you want to keep the strong text white */
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotation_481 {
+0% {
+  transform: rotateZ(0deg);
+}
+100% {
+  transform: rotateZ(360deg);
+}
+}
+
+
+.front {
+  transform: rotateY(180deg);
+  color: #9ca9b3;
+  display:flex;
+}
+
+.front .front-content {
+  position: absolute;
+  width: 98%; 
+  height: 100%;
+  padding: 11px; 
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; 
+  text-wrap: pretty;
+  line-height: 2;
+  word-wrap: break-word;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 2;
+  word-wrap: break-word;
+  word-break: break-word; 
+  hyphens: auto; 
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  .content {
+    box-shadow: 0px 0px 10px 2px #000000cc;
+  }
+
+  .front-content {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    width: 250px;
+    height: 350px;
+  }
+
+  .title {
+    font-size: 15px;
+  }
+}
+/* Add this to your Home.css */
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between cards as needed */
+  justify-content: center; /* Center cards horizontally */
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between cards as needed */
+  justify-content: center; /* Center cards horizontally */
+}
+
+.card {
+  width: 300px; /* Width of each card */
+  height: 400px; /* Height of each card */
+}
+
+

@@ -1,43 +1,87 @@
-import React, {useState} from "react";
+import React from "react";
+import "./Home.css";
 
 export const Home = () => {
   return (
-    <div style={{ 
-      display: "flex",
-      flexDirection: "column",
-      minHeight: "93.8vh"
-    }}>
-      <div style={{ 
-        backgroundImage: "url('https://images.unsplash.com/photo-1542617827-59ab88ecee35?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        flex: "1",
-        display: "flex",
-        justifyContent: "flex-start",
-        alignItems: "center", 
-        flexDirection: "column",
-        padding: "50px" 
-      }}>
-        <h1 style={{ color: "#25034f", marginBottom: "20px"}}>Get everything</h1>
-        <h1 style={{ color: "#25034f" }}>At One platform</h1>
-      </div>
-      <footer style={{ 
-        backgroundColor: "#e8c8e2",
-        color: "#25034f",
-        padding: "10px",
-        textAlign: "right" 
-      }}>
-        <p>
-          <h3>Made by Jayasree Maddu</h3>
-        </p>
-        <p>
-          <div style={{ display: "flex", justifyContent: "flex-start" }}> 
-            <a href="https://twitter.com"><img src="path_to_twitter_icon.svg" alt="Twitter" style={{ marginRight: "10px" }} /></a>
-            <a href="https://instagram.com"><img src="path_to_instagram_icon.svg" alt="Instagram" style={{ marginRight: "10px" }} /></a>
-            <a href="https://facebook.com"><img src="path_to_facebook_icon.svg" alt="Facebook" /></a>
+    <div className="home-container">
+      <section className="main">
+        <div id="particles-js">
+          <div className="heading">
+            <h1>SAENITD</h1>
+            <p>We are the society of Automotive Engineers Collegiate Club of National Institute of Technology Durgapur</p>
           </div>
-        </p>
-      </footer>
+        </div>
+      </section>
+
+      <div className="animated-line"></div>
+
+      <section className="boxes">
+        <div id="testimonial-box" className="container">
+          <div className="subheading">
+            <h2>We are present at</h2>
+            <p>
+              Various events and fests and numerous competitions and projects, we are not tires but enthusiast enough to achieve the sky
+            </p>
+          </div>
+          {/* Card Container */}
+          <div className="card-container">
+            <div className="card">
+              <div className="content">
+                <div className="back">
+                  <div className="back-content">
+                    <h2>Aarohan</h2>
+                    <br />
+                    <strong>Annual Fest</strong>
+                  </div>
+                </div>
+                <div className="front">
+                  <div className="front-content">
+                    <div className="title">
+                      The vibrant college life is incomplete without a fest and constitutes a major part of the life of students. It etches a mark on the academic calendar, and students look forward to the dates.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <div className="content">
+                <div className="back">
+                  <div className="back-content">
+                    <h2>Tech Fest</h2>
+                    <br />
+                    <strong>Technology Conference</strong>
+                  </div>
+                </div>
+                <div className="front">
+                  <div className="front-content">
+                    <div className="title">
+                      An exciting event showcasing the latest in technology and innovation. A hub for tech enthusiasts to explore and network.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="card">
+              <div className="content">
+                <div className="back">
+                  <div className="back-content">
+                    <h2>Cultural Gala</h2>
+                    <br />
+                    <strong>Cultural Fest</strong>
+                  </div>
+                </div>
+                <div className="front">
+                  <div className="front-content">
+                    <div className="title">
+                      A celebration of diverse cultures with performances, food, and activities. An opportunity to experience and enjoy cultural richness.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

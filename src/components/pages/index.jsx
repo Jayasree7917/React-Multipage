@@ -1,8 +1,9 @@
 export * from "./Home";
-export * from "./ToDo";
-export * from "./Calculator";
-export * from "./Counter";
-export * from "./Color";
+export * from "./Aarohan";
+export * from "./Events";
+export * from "./Tedx";
+export * from "./Teams";
+export * from "./Alumni";
 
 
 
